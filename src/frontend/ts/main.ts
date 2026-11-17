@@ -10,12 +10,17 @@ class Main implements EventListenerObject{
 
     handleEvent(object: Event): void {
 
+       
+
+        
+     
+
 
         this.buscarDevices();
 
 
-      
-       /*     
+      /*
+            
         let iNombre: HTMLInputElement = document.getElementById("iNombre"); 
         this.persona.modificarNombre(iNombre.value);
 
@@ -25,12 +30,12 @@ class Main implements EventListenerObject{
         parrafo.innerHTML = "se hizo click " + this.persona.getNombre();
         
         
-        let div: HTMLElement = document.getElementById("dFormulario"); 
+         
         
         div.hidden = true;
-        */
+    
         
-
+*/
      
     }
     
@@ -42,8 +47,15 @@ class Main implements EventListenerObject{
             if (consulta.readyState == 4) {
                 if (consulta.status == 200) {
                     
-                    let div: HTMLElement = document.getElementById("dFormulario"); 
-                    div.innerHTML = consulta.responseText;
+                    let ul: HTMLElement = document.getElementById("dFormulario"); 
+                    //console.log(consulta.responseText);
+
+                    let devices:Array<Device> = JSON.parse(consulta.responseText);
+                     
+                    for (let s of devices) {
+                        ul.innerHTML += `<li class="collection-item">${s.name} - ${s.description}</li>`;
+                    }
+                    
                 } else {
                     console.log("Algo salio mal " + consulta.status);
                 }                
@@ -62,13 +74,21 @@ class Main implements EventListenerObject{
 
 window.addEventListener("load", () => {
     let miClase: Main = new Main();
-    let boton: HTMLInputElement = document.getElementById("btn"); 
+    let boton: HTMLInputElement = document.getElementById("btn");
     boton.addEventListener("click", miClase);
 
     let btnGuardar: HTMLInputElement = document.getElementById("btnGuardar");
 
     btnGuardar.addEventListener("click", miClase);
   
+    let personasJson = [{"nombre": 'matias', 'edad': 38 },{'edad':23,'nombre':'Ramos'}];
+    
+
+    let personaStr = JSON.stringify(personasJson);
+
+
+  
+
 
 
     

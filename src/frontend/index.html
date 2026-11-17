@@ -25,19 +25,53 @@
             <!-- Page Body -->
             <div class="container">
 
-                <div id="dFormulario">
+             <div class="row">
 
+             
+                <div class="col s6"> 
+                    <h2>Dispositivos ya cargados</h2>
+                    <ul id="dFormulario" class="collection">
+                    
+                    </ul>
+                </div>     
+           
+                <div col s6 style="height: 40%;">
                     <h2>Formulario</h2>
                     <p id="parrafo" > 
                         dsakjkñadsñlkjsadñlk  adas 
                     </p>
        
-                    <input id="iNombre" type="text" value="" placeholder="Jose Lopez"/> 
-                    <input id="iPasswor" type="password" value="321312dsaads"> 
-                    <input type="date">
-                    <input id="btnGuardar" type="button" value="Guardar"/>
-                </div>  
 
+                    <div class="row">
+
+                        <div class="input-field col s6 m3 l3 lx1">
+                            <input id="iNombre" placeholder="Jose" type="text" class="validate">
+                            <label for="iNombre">Nombre</label>
+                        </div>
+                  
+                        <div class="input-field col s6 l3">
+                            <input id="iPasswor" type="password"> 
+                            <label for="iPasswor">Contraseña</label>
+                        </div>
+                        <div class="col s6 l3">
+                        <input type="date">
+                        </div>
+                        <div class="col s6 l3">
+                            
+                        <button  id="btnGuardar" class="btn waves-effect waves-light" >
+                            Guardar
+                            <i class="material-icons right">create</i>
+                        </button>
+                          <p>
+                            <label>
+                                <input id="iCheck" type="checkbox"   />
+                                <span>Guardar contraseña</span>
+                            </label>
+                            </p>
+                        </div>
+                    </div>
+                </div>  
+                </div>  
 
                 <br/>
                 <h3>Smart Home Web Client!</h3>
